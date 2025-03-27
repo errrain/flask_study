@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>방명록</title>
+  <style>
+    body { font-family: sans-serif; margin: 30px; }
+    .entry { margin-bottom: 15px; padding: 10px; border-bottom: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <h1>Flask 방명록</h1>
+
+  <form method="POST">
+    이름: <input type="text" name="name"><br><br>
+    메모:<br>
+    <textarea name="message" rows="4" cols="40"></textarea><br><br>
+    <button type="submit">등록</button>
+  </form>
+
+  <hr>
+  <h2>작성된 메모</h2>
+  {% if entries %}
+    {% for entry in entries %}
+      <div class="entry">
+        <strong>{{ entry.name }}</strong>:<br>
+        {{ entry.message }}
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>아직 메모가 없습니다.</p>
+  {% endif %}
+</body>
+</html>
