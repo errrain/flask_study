@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>정적 파일 실습</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <h1>Flask 정적 파일 처리</h1>
+  <p>이 페이지는 외부 CSS와 이미지가 포함됩니다.</p>
+
+  <img src="{{ url_for('static', filename='img/flask.png') }}" alt="Flask 로고" width="120">
+</body>
+</html>
